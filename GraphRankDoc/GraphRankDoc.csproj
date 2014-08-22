@@ -84,6 +84,7 @@
     <Content Include="docs\PageRank\PageRankCalc.xlsx" />
     <Content Include="docs\PageRank\The PageRank Search Algorithm.docx" />
     <Content Include="docs\PageRank\Graphs.pptx" />
+    <Content Include="docs\PageRank\Der PageRank Suchalgorithmus.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
