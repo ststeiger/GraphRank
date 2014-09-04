@@ -1,7 +1,6 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
 
 
 namespace RankingAlgorithms
@@ -10,16 +9,21 @@ namespace RankingAlgorithms
 
     class HITS
     {
+
+
         /// <summary>
-        /// Nhân ma trân với ma trận chuyển vị của chính nó. Kết quả là một ma trận đối xứng qua đường chéo chính
-        /// Do đó, chỉ tính nửa trên ma trận và đồng thời phép nhân chính là phép nhân trực tiếp giữa các dòng trong ma trận đó
+        /// Human matrix with matrix transpose itself. The result is a symmetric matrix main diagonal
+        /// Therefore, only half of the matrix simultaneously multiplication and multiplication is directly between the lines in the matrix
+        /// (Nhân ma trân với ma trận chuyển vị của chính nó. Kết quả là một ma trận đối xứng qua đường chéo chính
+        /// Do đó, chỉ tính nửa trên ma trận và đồng thời phép nhân chính là phép nhân trực tiếp giữa các dòng trong ma trận đó)
         /// </summary>
         /// <param name="matrix"></param>
         /// <param name="levelMatrix"></param>
         /// <returns></returns>
-        private static float[,] NhanMaTranChuyenVi(float[,] matrix, int levelMatrix)
+        private static float[,] NhanMaTranChuyenVi(float[,] matrix, int levelMatrix) // Matrix transpose
         {
             float[,] result = new float[levelMatrix, levelMatrix];
+            
             float temp;
             for (int i = 0; i < levelMatrix; i++)
                 for (int j = i; j < levelMatrix; j++)
@@ -34,8 +38,9 @@ namespace RankingAlgorithms
             return result;
         }
         
+
         /// <summary>
-        /// Chuyển vị ma trận
+        /// Displacement matrix (Chuyển vị ma trận)
         /// </summary>
         /// <param name="matrix"></param>
         /// <param name="levelMatrix"></param>
@@ -43,6 +48,7 @@ namespace RankingAlgorithms
         private static float[,] ChuyenViMatran(float[,] matrix, int levelMatrix)
         {
             float[,] matran_chuyenvi = new float[levelMatrix, levelMatrix];
+
             for (int i = 0; i < levelMatrix; i++)
                 for (int j = 0; j < levelMatrix; j++)
                     matran_chuyenvi[i, j] = matrix[j, i];
@@ -50,8 +56,9 @@ namespace RankingAlgorithms
             return matran_chuyenvi;
         }
 
+
         /// <summary>
-        /// Nhân ma trận - vector. Dòng ma trận nhân với vector
+        /// Matrix - vector. Line matrix vector multiply (Nhân ma trận - vector. Dòng ma trận nhân với vector)
         /// </summary>
         /// <param name="matrix"></param>
         /// <param name="levelMatrix"></param>
@@ -73,8 +80,10 @@ namespace RankingAlgorithms
             return result;
         }
 
+
         /// <summary>
-        /// Kiểm tra sự giống nhau giữa 2 vector dựa trên sự sai số (sau dấu chấm phẩy)
+        /// Check out the similarity between two vectors based on the error (after the semicolon)
+        /// (Kiểm tra sự giống nhau giữa 2 vector dựa trên sự sai số (sau dấu chấm phẩy))
         /// </summary>
         /// <param name="vectorA"></param>
         /// <param name="vectorB"></param>
@@ -89,6 +98,8 @@ namespace RankingAlgorithms
             return true;
         }
 
+
+        // normalized
         private static float[] ChuanHoaVector(float[] vectorA, int levelVector, int SaiSo)
         {
             float[] result = new float[levelVector];
@@ -103,8 +114,9 @@ namespace RankingAlgorithms
             return result;
         }
 
+
         /// <summary>
-        ///  Tính hub score
+        ///  Calculate hub score (Tính hub score)
         /// </summary>
         /// <param name="matrix"></param>
         /// <param name="levelMatrix"></param>
@@ -135,6 +147,7 @@ namespace RankingAlgorithms
                 countLoop--;
             }
         }
+
 
         public static void TinhHubAuthorityScore(float[,] matrix,float[,] matrix_save, int levelMatrix, int Saiso, out List<float> listHub,out List<float> listAuthority)
         {

@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="docs\MMX\CHANGELOG.txt" />
+    <Content Include="docs\MMX\info.txt" />
     <Content Include="docs\PageRank\PageRank.html" />
+    <Content Include="docs\MMX\sylvester.js" />
+    <Content Include="docs\MMX\sylvester.src.js" />
     <Content Include="docs\SHS\SHS.html" />
     <Content Include="docs\Various.html" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -85,6 +89,7 @@
     <Content Include="docs\PageRank\The PageRank Search Algorithm.docx" />
     <Content Include="docs\PageRank\Graphs.pptx" />
     <Content Include="docs\PageRank\Der PageRank Suchalgorithmus.docx" />
+    <Content Include="docs\PageRank\PageRank_MatrixDerivation.docx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

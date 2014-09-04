@@ -1,6 +1,6 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 
 namespace RankingAlgorithms
@@ -9,11 +9,14 @@ namespace RankingAlgorithms
 
     class MarkovCluster
     {
+
+
         public static void AddingSelfLoop(ref float[,] matrix, int n)
         {
             for (int i = 0; i < n; i++)
                 matrix[i, i] = 1f;
         }
+
 
         public static void NormalizeMatrix(ref float[,] matrix, int n)
         {
@@ -32,6 +35,7 @@ namespace RankingAlgorithms
                     matrix[j, i] = (float)Math.Round(matrix[j, i] / listfloat[i], 3);
         }
 
+
         public static float[,] PowerMatrix(float[,] matrix, int n)
         {
             float[,] result = new float[n, n];
@@ -45,6 +49,7 @@ namespace RankingAlgorithms
                 }
             return result;
         }
+
 
         public static void InflateMatrix(ref float[,] matrix, int n)
         {
@@ -63,6 +68,7 @@ namespace RankingAlgorithms
                     matrix[j, i] = (float)Math.Round(matrix[j, i] / sumSquare, 3);
             }
         }
+
 
         public static bool IsSteadyMatrix(float[,] matrix, int n)
         {
@@ -86,6 +92,7 @@ namespace RankingAlgorithms
             }
             return true;                    
         }
+
 
         public static List<List<int>> InterpretMatrix(float[,] matrix, int n)
         {
@@ -114,6 +121,7 @@ namespace RankingAlgorithms
             return listCluster;
         }
 
+
         public static List<List<int>> InterpretMatrixOverlap(float[,] matrix, int n)
         {
             List<List<int>> listCluster = new List<List<int>>();
@@ -131,16 +139,17 @@ namespace RankingAlgorithms
             return listCluster;
         }     
 
+
         /// <summary>
-        /// Hàm thực hiện gom nhóm Cluster. 
+        /// Cluster grouping function performed. (Hàm thực hiện gom nhóm Cluster.) 
         /// </summary>
         /// <param name="matrix">[n,n] ma trận vuông đồng dạng | khoảng cách</param>
         /// <param name="n">cấp ma trận</param>
-        /// <param name="numberLoop">Số lần lặp để nhân</param>
-        /// <param name="AddSelfLoop">True: phần tử đường chéo chính = 1. False: Ngược lại</param>
+        /// <param name="numberLoop">Number of iterations to workers (Số lần lặp để nhân)</param>
+        /// <param name="AddSelfLoop">True: The main diagonal elements (phần tử đường chéo chính) = 1. False: Conversely (Ngược lại)</param>
         /// <param name="Case">
-        /// 1: sử dụng hàm InterpretMatrix(...)
-        /// 2: sử dụng hàm InterpretMatrixOverlap(...)
+        /// 1: using the function (sử dụng hàm) InterpretMatrix(...)
+        /// 2: using the function (sử dụng hàm) InterpretMatrixOverlap(...)
         /// </param>
         /// <returns></returns>
         public static List<List<int>> MarkovClusterAlgorithm(ref float[,] matrix, int n, out int numberLoop, bool AddSelfLoop, int Case)
@@ -178,6 +187,7 @@ namespace RankingAlgorithms
             return result;
         }
 
+
         public static void MarkovClusterAlgorithm(ref float[,] matrix, int n, out int numberLoop, bool AddSelfLoop)
         {
             if (AddSelfLoop == true)
@@ -197,5 +207,8 @@ namespace RankingAlgorithms
             }
         }
 
+
     }
+
+
 }

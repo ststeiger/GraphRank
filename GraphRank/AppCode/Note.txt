@@ -1,0 +1,23 @@
+﻿
+On <br />
+http://www.math.cornell.edu/~mec/Winter2009/RalucaRemus/Lecture3/lecture3.html<br />
+it defines the PageRank matrix as
+<br / >
+
+![Page Rank matrix formula][1] 
+
+where 
+
+![B defined as][2].
+
+While the [wikipedia entry for PageRank][3] has this formula:
+
+![PageRank according to WikiPedia][4]
+
+Unfortunately.
+
+
+  [1]: http://i.stack.imgur.com/HkZYe.gif
+  [2]: http://i.stack.imgur.com/jCsll.gif
+  [3]: http://en.wikipedia.org/wiki/PageRank#Computation
+  [4]: http://i.stack.imgur.com/OSUVm.png

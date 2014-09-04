@@ -11,6 +11,8 @@ namespace GraphRank
     // https://github.com/gkatsev/pagerank/blob/master/pagerank.py
     static class Program
     {
+
+
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
@@ -79,12 +81,6 @@ namespace GraphRank
             // http://langvillea.people.cofc.edu/PRDataCode/index.html
 
 
-            
-
-
-
-
-
             //RankingAlgorithms.PageRank.Normalize(web4);
 
 
@@ -95,5 +91,9 @@ namespace GraphRank
             Console.WriteLine(" --- Press any key to continue --- ");
             Console.ReadKey();
         }
+
+
     }
+
+
 }
